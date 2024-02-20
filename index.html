@@ -130,7 +130,7 @@ Blue Yonder, Hyderabad. July 2020- July 2021 </li>
    <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <div id="jokeEveryHour"></div>
+        <div id="jokeEveryMinute"></div>
       </div>
       <div class="col-md-6">
         <div id="weatherEveryHour"></div>
@@ -166,13 +166,13 @@ $('.rotate-button').click(function() {
                 easing: 'easeInOutQuad'
             });
         });
-function jokeEveryHour() {
+function jokeEveryMinute() {
       $.get("https://v2.jokeapi.dev/joke/Any", function(data) {
         if(data && data.setup && data.delivery) {
           var joke = data.setup + " " + data.delivery;
-          $("#jokeEveryHour").html("<p>" + joke + "</p>");
+          $("#jokeEveryMinute").html("<p>" + joke + "</p>");
         } else if (data && data.joke) {
-          $("#jokeEveryHour").html("<p>"+"\"" + data.joke + "\""+"</p>");
+          $("#jokeEveryMinute").html("<p>"+"\"" + data.joke + "\""+"</p>");
         }
       });
     }
@@ -189,8 +189,8 @@ function jokeEveryHour() {
       });
     };
 
-    jokeEveryHour();
-    setInterval(jokeEveryHour, 60000);
+    jokeEveryMinute();
+    setInterval(jokeEveryMinute, 60000);
     weatherEveryHour();
     setInterval(weatherEveryHour, 600000);
     </script>
